@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Screen</title>
+ 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="stylesheets/login.css">
+<link type ="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js">
+</head>
+
+
+<body>
+
+<header> <h2 >The section title</h2>
+        <p>The text paragraph.</p>
+        <nav></nav>
+</header>
+<h1>Welcome </h1>
+<form action="login" id="loginForm" method = "post" onsubmit = "return validate()"> 
+
+<fieldset>
+<legend>Coder Bank Login</legend>
+   
+  <label for="username">Enter UserName</label>
+  <input type = "text" id ="username" name="userName"  />
+  <span>required, at least 6 characters</span> 
+  <br/>
+   
+    <label for="password">Enter Password </label>
+  <input type = "password" id="password" name="password" />
+  <span>required, at least 6 characters</span><br/>
+  <input type = "submit" value = "Enter To Login" >
+  
+ </fieldset> 
+</form>
+<span id="errMessage" style="color: red"></span>
+<footer></footer>
+<script type="text/javascript" src = "scripts/login.js"></script>
+<!--  script>$("#loginForm").validate();</script-->  
+               
+</body>
+</html>

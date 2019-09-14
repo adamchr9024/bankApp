@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<header> <h2 >The section title</h2>
+        <p>The text paragraph.</p>
+        <nav></nav>
+</header>
+<h1>Welcome </h1>
+<form action="createlogin" id="createloginForm" method = "post" onsubmit = "return validate()"> 
+
+<fieldset>
+<legend>Coder Bank Create Login</legend>
+
+ <label for="firstname">Enter First Name</label>
+  <input type = "text" id ="firstname" name="firstname"  />
+   <br/>
+   
+   <label for="lastname">Enter Last Name </label>
+  <input type = "text" id="lastname" name="lastname" />
+ <br/>
+  
+   
+  <label for="username">Enter UserName</label>
+  <input type = "text" id ="username" name="userName"  />
+  <span>required, at least 6 characters</span> 
+  <br/>
+   
+    <label for="password">Enter Password </label>
+  <input type = "password" id="password" name="password" />
+  <span>required, at least 6 characters</span><br/>
+  
+  
+  <label for="password2"> ReEnter Password </label>
+  <input type = "password" id="password2" name="password2" />
+  <br/>
+  <input type = "submit" value = "Create Login" >
+ </fieldset> 
+</form>
+<span id="errMessage" style="color: red"></span>
+<footer></footer>
+<script type="text/javascript" src = "scripts/createlogin.js"></script>
+<!--  script>$("#loginForm").validate();</script-->  
+
+</body>
+</html>
