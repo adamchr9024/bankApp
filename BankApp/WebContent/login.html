@@ -5,39 +5,45 @@
 <title>Login Screen</title>
  
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="stylesheets/login.css">
-<link type ="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<link rel="stylesheet" href = "stylesheets/login.css">
 </head>
 
 
-<body>
+<body class="  container gradient-3 ">
 
-<header> <h2 >The section title</h2>
-        <p>The text paragraph.</p>
+<header> <h2 ></h2>
+        <p></p>
         <nav></nav>
 </header>
-<h1>Welcome </h1>
-<form action="login" id="loginForm" method = "post" onsubmit = "return validate()"> 
+<div class="  flex row col-sm-10 form-group-lg">
+			
+<!-- h1>Welcome </h1><br/-->
+
+<form action="login" id="loginForm" method = "post" > <!-- onsubmit = "return validate()" -->
 
 <fieldset>
-<legend>Coder Bank Login</legend>
+<legend class="">Coder's Bank Login</legend>
    
-  <label for="username">Enter UserName</label>
+  <label for="username"><b>Enter UserName</b></label>
   <input type = "text" id ="username" name="userName"  />
-  <span>required, at least 6 characters</span> 
+  
   <br/>
    
-    <label for="password">Enter Password </label>
+    <label for="password"><b>Enter Password</b> </label>
   <input type = "password" id="password" name="password" />
-  <span>required, at least 6 characters</span><br/>
-  <input type = "submit" value = "Enter To Login" >
-  
+  <br/>
+  <input  class = "button" type = "submit" value = "Enter To Login" >
+  <a href="newpassword.html">can't remember password? </a>
  </fieldset> 
 </form>
-<span id="errMessage" style="color: red"></span>
+
+</div>
 <footer></footer>
 <script type="text/javascript" src = "scripts/login.js"></script>
-<!--  script>$("#loginForm").validate();</script-->  
+<script type="text/javascript" src = "scripts/loginfetch.js"></script>
+
                
 </body>
 </html>

@@ -33,7 +33,7 @@ public class SuccessCreate extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		pw.print("<h2>Welcome " + request.getParameter("userName") + "</h2>");
 		pw.print("<h4>You've successfully created an Account at  " + LocalDate.now() + "</h4>");
-		pw.print("<br/> <h4> Pleas Login to Begin </h4>");
+		pw.print("<br/> <h4> Please Login to Begin </h4>");
 		pw.print("<a href = 'login.html'>Go To Login Page</a>");
 	}
 

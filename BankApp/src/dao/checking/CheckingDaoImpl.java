@@ -29,9 +29,6 @@ import java.sql.CallableStatement;
 
 public class CheckingDaoImpl implements CheckingDao {
 
-	
-	
-
 	@Override
 	public ArrayList<Transaction> getTransactions(Long acctNo) throws BusinessException {
 		ArrayList<Transaction> mylist = new ArrayList<Transaction>();
@@ -64,7 +61,6 @@ public class CheckingDaoImpl implements CheckingDao {
 			throw new BusinessException("Service is unavailable (CheckingDaoImpl transaction) " + e.getMessage());
 		}
 
-		
 	}
 
 	@Override

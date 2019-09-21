@@ -44,12 +44,18 @@ public class LoginController extends HttpServlet {
 		RequestDispatcher rd=null;
 		try {
 			accountholder = service.find(accountholder.getUsername(), accountholder.getPasswd());
-				//success - forward
+				
+			  // https://www.youtube.com/watch?v=5J1LLfkkuvo
+			  //success - forward
+			   // Gson gson = new Gson();
+			   // out.print(gson.toJson());
 			if (accountholder != null) {///	System.out.println("If");
 				HttpSession session=request.getSession();
 				session.setAttribute("accountholder",accountholder);
 				rd=request.getRequestDispatcher("success");
-				rd.forward(request, response);
+				rd.include(request,response);
+				
+				//rd.forward(request, response);
 			}//out.print("<center><span style='color:red;'></span></center>");
 			
 		} catch (BusinessException e) {

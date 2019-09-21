@@ -1,0 +1,44 @@
+fieldset {
+  display: block;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 0.45em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 2px groove blue;
+  border-radius: 25px;
+}
+.error{color: red;}
+label {font-weight: bold}
+ body{background-image:  -moz-radial-gradient(circle farthest-side,
+ 	yellow, lightgreen, gold);
+form div {
+  margin-bottom: 10px;
+}
+.center{
+    //margin: auto;
+   text-align: center;
+    align-content: center;
+  }
+
+input1 {color: blue;
+	background-image:  -moz-radial-gradient(circle farthest-side,
+ 	yellow, green, gold);
+	width: 75px;
+	height: 50px;
+	//border: 1px 2px 1px 2px;
+	border-style: solid;
+	border-radius: 10px 10px 10px 10px;
+	border-color: red;
+	/*transition-property:  background-image;*/
+	transition-property: all;
+	transition-duration: 3s
+}
+input1:hover{background-image: -moz-radial-gradient(circle farthest-side,
+ 	yellow, lightgreen, gold);
+ 	border: 4px dotted red;
+ 	font-size: 250%;
+ 	width: 90px;
+}
+ 

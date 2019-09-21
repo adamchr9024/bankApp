@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Administrative Login</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<link rel="stylesheet" href = "stylesheets/login.css">
+</head>
+<body>
+    <form action="adminlogin" id="adminloginForm" method = "post" > 
+
+   <fieldset>
+   <legend>Coder's Bank Administrative Login</legend>
+   
+  <label for="username">Enter UserName</label>
+  <input type = "text" id ="username" name="userName"  /><br/>
+   <label for="password">Enter Password</label>
+  <input type = "password" id ="password" name="password"  /><br/>
+  
+  <span>requires 1 character (A-Z), 1 character (a-z), 1 number (0-9) </span><br/>
+  <span> 1 special character (!@#$%^&*(){}[]+-=`~?), a minimum of 10 characters </span><br/>      
+  <input type = "submit" value = "< login >">
+  <br/>
+  </fieldset> 
+</form>
+<script type="text/javascript" src = "scripts/adminlogin.js"></script>
+</body>
+</html>

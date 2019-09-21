@@ -38,7 +38,7 @@ public class Logout extends HttpServlet {
     	}
     	pw.print("Thank You and Good Bye");
     	session.invalidate();
-    	response.sendRedirect("/BankApp/login.html");
+    	response.sendRedirect("/BankApp/");
 	}
 
 }

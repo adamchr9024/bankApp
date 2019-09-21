@@ -1,6 +1,6 @@
 
 
-function validate(){
+/*function validate(){
 	//alert("inside");
 	
 	const username=document.getElementById("username").value;
@@ -14,33 +14,33 @@ function validate(){
 	}
 	document.getElementById("errMessage").innerText = "";
 	   return true;
-}
-	/*$.noConflict();
-    jQuery(document).ready(function(){  
-	
-		jQuery("#loginForm").on('submit',function(e){
-			e.preventDefault();
-			alert("");
-			/*rules:{
-				username:{
+}*/
+	$(document).ready(function(){  //validate uses the 'name' attribute
+    	$("form[id='loginForm']").validate({
+			//e.preventDefault();
+			rules:{
+				userName:{
 					required: true,
 				    minlength: 6,
 			             },
 			   password:{
 				   required: true,
 			       minlength: 6,
-			            }
+			       }
 			},
+			
 			messages: {
-				username:{
-					required: "Please enter your username",
-					minlength: "user name must be at least 6 characters"
+				userName:{
+					required: 'Please enter your username',
+					minlength: 'User name must be at least 6 characters',
 				},
 				password:{
-					required: "Please enter your password",
-					minlength: "password must be at least 6 characters"
+					required: 'Please enter your password',
+					minlength: 'Password must be at least 6 characters'
 				}
+			},
+			submitHandler: function(form){
+				form.submit();
 			}
 		});
 	});
-//}*/

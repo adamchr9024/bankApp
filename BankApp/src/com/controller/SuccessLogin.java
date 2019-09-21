@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.checking.CheckingDao;
+import dao.checking.CheckingDaoImpl;
+import exception.BusinessException;
+import oracle.sql.DATE;
 import service.impl.CheckingServiceImpl;
 import userdata.AccountHolder;
 
@@ -48,11 +52,28 @@ public class SuccessLogin extends HttpServlet {
 		// rd = request.getRequestDispatcher("acct.html");
 		// rd.include(request, response);
 		AccountHolder accountholder = (AccountHolder) session.getAttribute("accountholder");
+		pw.println("<html>");
+		pw.println("<body>");
+		pw.println("<head>");
+		pw.println("<title>");
+		pw.println("Account Holder");
+		pw.println("</title>");
+		pw.println("<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>");
+		pw.println("</head>");
+		CheckingDaoImpl checking = new CheckingDaoImpl();
+		double balance = 0.0;
+		try {
+			 balance = checking.getBalance(accountholder.getAcct().getAccountNo());
+		} catch (BusinessException e) {
+			request.getRequestDispatcher("login.html").include(request, response);
+			pw.print("<center><span style='color:red;'>"+e.getMessage()+"</span></center>");
+		
+		}
+		
+		pw.print("<h2>Welcome " + accountholder.getFlname() + "</h2>"); //LocalDate.now()
+		pw.print("<h4>You've logged in successfully at  " + new java.util.Date() + "</h4>");
 
-		pw.print("<h2>Welcome " + accountholder.getFlname() + "</h2>");
-		pw.print("<h4>You've logged in successfully at  " + LocalDate.now() + "</h4>");
-
-		pw.print("<h4> Your Balance is $" + accountholder.getAcct().getBalance() + "</h4>");
+		pw.print("<h4 id='bal'> Your Balance is " + String.format("$%.2f", balance) + "</h4>");
 		
 		  //double balance = csi.
 		  
@@ -60,22 +81,35 @@ public class SuccessLogin extends HttpServlet {
 		//  pw.print("<br/> <input type = 'submit' value = 'Get Balance'>");
 		  
 		 // pw.print("</form>");
+		
+		pw.print("<script>");
+		  pw.print("function preventBack(){window.history.forward();}");
+		  pw.print(" setTimeout(preventBack(), 0);");
+		  pw.print(" window.onunload=function(){null}");
+		  pw.print("</script>");
 		  
 		  pw.print("<form action = 'deposit' method = 'post'> ");
 		  pw.print("<br/> <input type = 'submit' value = 'Deposit'>");
 		  pw.print("</form>");
 		  
 		  
-		  pw.print("</form>");
+		  //pw.print("</form>");
 		  pw.print("<form action = 'withdrawal' method = 'post'>");
 		  pw.print("<br/> <input type = 'submit' value = 'Withdrawal'>");
-		  pw.print("</form>"); pw.print("</form>");
+		  pw.print("</form>");
 		  pw.print("<form action = 'transaction' method = 'post'>");
 		  pw.print("<br/> <input type = 'submit' value = 'Show Transactions'>");
+		 // pw.print("<br/><button onclick='update()' value='Update'>UpDate</button> ");
 		  pw.print("</form>"); //pw.print("script scr = 'scripts/action.js'"); //add
 		  //headers and fotters // + new
 		  //SimpleDateFormat("dd.MMM.yyyy HH:mm:ss").format(new Date()) + "</h4>");
 		  pw.print("<a href='/BankApp/logout'>LogOut</a>");
+		//  pw.print("<script type='text/javascript' src = 'scripts/loginfetch.js'></script>");
+		  pw.println("</body>");
+          pw.println("</html>");
+        
+			
+		 // pw.print();
 		 
 
 	}

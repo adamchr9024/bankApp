@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>Create Login Page</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<link rel="stylesheet" href="stylesheets/createlogin.css">
 </head>
-<body>
-<header> <h2 >The section title</h2>
-        <p>The text paragraph.</p>
-        <nav></nav>
-</header>
-<h1>Welcome </h1>
-<form action="createlogin" id="createloginForm" method = "post" onsubmit = "return validate()"> 
+<body class="container">
+	
+		<h1 class="text-center">Coder's Bank Inc</h1><br/>
+<div class="  flex row col-sm-10 form-group-lg">		
+	<h1>Welcome</h1>
+	<form action="createlogin" id="createloginForm" method="post">
 
-<fieldset>
-<legend>Coder Bank Create Login</legend>
+		<fieldset>
+			<legend>Coder Bank Create Login</legend>
 
- <label for="firstname">Enter First Name</label>
-  <input type = "text" id ="firstname" name="firstname"  />
-   <br/>
-   
-   <label for="lastname">Enter Last Name </label>
-  <input type = "text" id="lastname" name="lastname" />
- <br/>
-  
-   
-  <label for="username">Enter UserName</label>
-  <input type = "text" id ="username" name="userName"  />
-  <span>required, at least 6 characters</span> 
-  <br/>
-   
-    <label for="password">Enter Password </label>
-  <input type = "password" id="password" name="password" />
-  <span>required, at least 6 characters</span><br/>
-  
-  
-  <label for="password2"> ReEnter Password </label>
-  <input type = "password" id="password2" name="password2" />
-  <br/>
-  <input type = "submit" value = "Create Login" >
- </fieldset> 
-</form>
-<span id="errMessage" style="color: red"></span>
-<footer></footer>
-<script type="text/javascript" src = "scripts/createlogin.js"></script>
-<!--  script>$("#loginForm").validate();</script-->  
+			<label for="firstname">Enter First Name</label> <input type="text"
+				id="firstname" name="firstname" /> <br /> <label for="lastname">Enter
+				Last Name </label> <input type="text" id="lastname" name="lastname" /> <br />
 
+
+			<label for="username">Enter UserName</label> <input type="text"
+				id="username" name="userName" /> <br /> <label for="password">Enter
+				Password </label> <input type="password" id="password" name="password" /> <br />
+
+
+			<label for="confirmpassword"> Confirm Password </label> <input
+				type="password" id="confirmpassword" name="confirmpassword" /><br />
+			<br /> <select name="security" id="security">
+				<option value="What was your mother's maiden name?">What
+					was your mother’s maiden name?</option>
+				<option value="What was your high school mascot?" selected>What
+					was your high school mascot?</option>
+				<option value="What is your favorite hobby?">What is your
+					favorite hobby?</option>
+				<option value="What was the name of the first school you attended?">What
+					was the name of the first school you attended?</option>
+				<option value="What city / town were you born in?">What
+					city / town were you born in?</option>
+			</select><br /> <label for="answer">Enter Answer: </label> <input id="answer"
+				name="answer" type="text"> <br /> <input type="submit"
+				value="Create Login">
+		</fieldset>
+	</form>
+	<span id="errMessage" style="color: red"></span>
+	<footer></footer>
+	<script type="text/javascript" src="scripts/createlogin.js"></script>
+	<!--  script>$("#loginForm").validate();</script-->
+</div>
 </body>
 </html>

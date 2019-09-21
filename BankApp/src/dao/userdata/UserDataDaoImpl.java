@@ -17,18 +17,20 @@ import userdata.AccountHolder;
 public class UserDataDaoImpl implements Userdatadao{
 
 	@Override
-	public boolean createUser(String username, String pw, String flname) throws BusinessException {
+	public boolean createUser(String username, String pw, String flname, String question, String answer) throws BusinessException {
 		boolean test=true;
 		
 		try(Connection connection = OracleConnection.getConnection()){
 			SHA1 shaHash = new SHA1();
 			String hashpw = shaHash.sha1(pw); 
-			 String sql = "{call createUser(?,?,?,?)}";
+			 String sql = "{call createUser(?,?,?,?,?,?)}";
 			 //USERNAME, PASSWD, ACCT, FLNAME
 			 CallableStatement callstmt = connection.prepareCall(sql);  //connection.prepareCall(sql);
 			 callstmt.setString( 1, username);
 			 callstmt.setString( 2, hashpw);  
 			 callstmt.setString(4 , flname );
+			 callstmt.setString(5 , question );
+			 callstmt.setString(6 , answer );
 			 CheckingDaoImpl cki = new CheckingDaoImpl();
 			 long acct = cki.create("checking", 0.0);
 			 ///get the account number by creating and account object
@@ -43,6 +45,26 @@ public class UserDataDaoImpl implements Userdatadao{
 			throw new BusinessException("Service is unavailable createUser (UserDataDaoImpl ) "+ e.getMessage());// TODO Auto-generated catch block
 			
 		}
+	}
+	public String getSecurityQuestion(String username) throws BusinessException{  //and answer
+		String question = null;
+		try(Connection connection = OracleConnection.getConnection()) {
+			String sql = "select question, answer from accountholder  where username = ?";  //DELETE FROM table_name WHERE condition;
+			 PreparedStatement ppstmt = connection.prepareStatement(sql);
+			 ppstmt.setString(1 , username);
+			 ResultSet resultset = ppstmt.executeQuery(); 
+			 if(resultset.next()) {
+			    String question_answer = resultset.getString("question");
+			    question_answer += "_"+ resultset.getNString("answer");
+			    return question_answer;
+			 }
+			 return  question;
+	  }
+		catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Service is getSecurityQuestion unavailable (UserDataDaoImpl) "+ e.getMessage());// TODO Auto-generated catch block
+			
+		}
+		
 	}
 
 	@Override

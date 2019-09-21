@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Screen</title>
+ 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<link rel="stylesheet" href = "stylesheets/login.css">
+</head>
+
+
+<body>
+
+<header> <h2 >The section title</h2>
+        <p>The text paragraph.</p>
+        <nav></nav>
+</header>
+
+<h2>Welcome " + accountholder.getFlname() + "</h2> //LocalDate.now()
+		<h4>You've logged in successfully at  " + new java.util.Date() + "</h4>
+
+		<h4> Your Balance is " + String.format("$%.2f", accountholder.getAcct().getBalance()) + "</h4>
+		
+		  //double balance = csi.
+		  
+		//  <form action = '/balance'>
+		//  <br/> <input type = 'submit' value = 'Get Balance'>
+		  
+		 // </form>
+		<script>
+		  function preventBack(){window.history.forward();}
+		   setTimeout(preventBack(), 0);
+		   window.onunload=function(){null}
+		  </script>
+		  
+		  <form action = 'deposit' method = 'post'> 
+		  <br/> <input type = 'submit' value = 'Deposit'>
+		  </form>
+		  
+		  
+		  </form>
+		  <form action = 'withdrawal' method = 'post'>
+		  <br/> <input type = 'submit' value = 'Withdrawal'>
+		  </form> </form>
+		  <form action = 'transaction' method = 'post'>
+		  <br/> <input type = 'submit' value = 'Show Transactions'>
+		  </form> 
+		  
+		  <a href='/BankApp/logout'>LogOut</a>
+<script type="text/javascript" src = "scripts/success.js"></script>
+<script type="text/javascript" src = "scripts/success.js"></script>
+
+               
+</body>
+</html>

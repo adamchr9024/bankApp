@@ -42,20 +42,27 @@ public class CreateLogin extends HttpServlet {
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
 		String flname = firstname + " "+lastname;
-		//CheckingServiceImpl csi = new CheckingServiceImpl();
+		String question = request.getParameter("security");
+	    //  String q2 = request.
+		String answer = request.getParameter("answer");
+		//System.out.println(question);
+		//System.out.println(answer);
+		CheckingServiceImpl csi = new CheckingServiceImpl();
 		UserDataServiceImpl udsi = new UserDataServiceImpl();
 		RequestDispatcher rd = null;
 		try {
-		 //long acctNO =	csi.create("checking" , 0.0);
-		  if (udsi.createUser(username, password, flname)) {
-			  rd=request.getRequestDispatcher("createsuccess");
+		   long acctNO =	csi.create("checking" , 0.0);
+		    if (udsi.createUser(username, password, flname, question, answer)) {
+		 	  rd=request.getRequestDispatcher("createsuccess");
 			  rd.forward(request, response);
-		  }
+		
+			}
 		      
 		  
 		} catch (BusinessException e) {
-			// TODO Auto-generated catch block
+			
 			rd=request.getRequestDispatcher("createLogin.html");
+			
 			rd.include(request, response);//
 			out.print("<center><span style='color:red;'>"+e.getMessage()+"</span></center>");
 		}

@@ -1,0 +1,49 @@
+body{background-color: lightblue;}
+
+#spanform{
+	padding: 120px;
+	 display: inline-block;
+    position: relative; 
+    height:400px;
+    width: 30%;
+    vertical-align: top;
+    }
+div{
+	//position: relative;
+}
+ .center{
+    margin: auto;
+     width: 50%;
+    padding: 10px;
+  }
+  input{font-weight:bold;	}
+  form{
+     
+      position: relative;
+      float: top; 
+      display: block;
+      padding: 5px;
+      font-weght: bold;
+      vertical-align: center;
+  }
+  //#form2{ display: inlineblock}
+   
+ #bank{ width:30%;
+    height:400px;
+    display: inline;
+    vertical-align: top;
+    object-fit: cover;
+    }
+ #carasel{padding: 0px;}
+ span{
+	
+	 display: inline-block;
+    position: relative; 
+    height:400px;
+    width: 30%;
+    vertical-align: top;
+    }
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }

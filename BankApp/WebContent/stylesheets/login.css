@@ -9,3 +9,39 @@ fieldset {
   border: 2px groove gray;
   border-radius: 25px;
 }
+.error{color: red;}
+ a {float: right; float: bottom;}
+form div {
+  margin-bottom: 10px;
+}
+body{
+	
+	//background-image: url("../images/");
+}
+a  { float: bottom;  float:right;}
+
+.gradient-6 {
+	 background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+	}
+	.gradient-3 {
+	
+	background-image: -moz-radial-gradient(left, circle farthest-side,
+	yellow, green 25% , yellow 75%, green);
+	background-image: -webkit-gradient(radial, left center, 0, left center,
+	190, from(blue), color-stop(25%, gray), 	color-stop(75%, orange), to(yellow));
+	
+}
+div{ position: relative; left: 25%; top: 25%;}
+button{  
+        font: bold 24px/150% Arial, Helvetica, sans-serif;  
+        display: inline; 
+        width: 300px; 
+        padding: 10px;
+        margin: 10px auto;
+    }
+  .center{
+   margin: auto;
+  width: 50%;
+  
+  padding: 10px;
+  }

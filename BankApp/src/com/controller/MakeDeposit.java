@@ -43,10 +43,10 @@ public class MakeDeposit extends HttpServlet {
     		response.sendRedirect("/BankApp/login.html");
     	}
 		double amount = Double.parseDouble((request.getParameter("amount")));
-		System.out.println("amount = "+amount);
+		//System.out.println("amount = "+amount);
 		
 		AccountHolder accountholder = (AccountHolder)session.getAttribute("accountholder");
-		System.out.println("account number = "+accountholder.getAcct().getAccountNo());
+		//System.out.println("account number = "+accountholder.getAcct().getAccountNo());
 		
 		//push to database
 		RequestDispatcher rd = null;
